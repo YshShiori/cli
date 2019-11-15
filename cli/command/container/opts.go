@@ -768,6 +768,8 @@ func parseNetworkAttachmentOpt(ep opts.NetworkAttachmentOpts) (*networktypes.End
 		}
 	}
 
+	// 只设置了EndpointSetting的几个属性:
+	//	1.Aliases 2.DriverOpts 3.Links 4.IPAMConfig
 	epConfig := &networktypes.EndpointSettings{}
 	epConfig.Aliases = append(epConfig.Aliases, ep.Aliases...)
 	if len(ep.DriverOpts) > 0 {
